@@ -1,0 +1,16 @@
+{% extends 'portfolio/base2.html' %}
+
+{% block content %}
+    <h1>Search Client</h1>
+    <form method="get" class="client-form" action="{% url 'portfolio:client_list2' %}">
+        <p>
+          <label>Client ID:</label>
+          <input type="text" name="client_ID" />
+        </p>
+        <p>
+          <label>lname:</label>
+          <input type="text" name="lname" />
+        </p>
+        <button type="submit" class="save btn btn-default">Search</button>
+    </form>
+{% endblock %}

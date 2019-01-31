@@ -1,0 +1,63 @@
+{% extends 'portfolio/base2.html' %}
+{% block content %}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Good Shepherd</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    </head>
+    <body>
+    <style>
+
+        body {
+           background-color: #e6fffa;
+        }
+    </style>
+
+    <div class="row">
+        <h2 style="padding-left: 15Px">Donation Information</h2>
+    </div>
+    <div>
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr class="bg-info">
+
+                <th>Item Name</th>
+                <th>Donor Name</th>
+                <th>Item Quantity</th>
+                <th>Received Date</th>
+		        <th colspan="3">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for donation in donations %}
+                <tr>
+                    <td>{{ donation.item }}</td>
+                    <td>{{ donation.donor }}</td>
+                    <td>{{ donation.quantity }}</td>
+                    <td>{{ donation.received_date }}</td>
+
+                    <td><a href="{% url 'portfolio:donation_edit2' pk=donation.pk %}"
+                           class="btn btn-warning">Edit</a></td>
+                    <td><a href="{% url 'portfolio:donation_delete2' pk=donation.pk %}"
+                           onclick="return confirm('Are you sure you want to delete?')"
+                           class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+     <div class="row">
+            <a href="{% url 'portfolio:donation_new2' %}" class="row"><span
+                    class="btn btn-primary">Add New Donation</span></a>
+        </div>
+     <div class="row">
+                    <a href="{% url 'portfolio:donor_list2' %}" class="row"><span
+                            class="btn btn-primary">View Donors</span></a>
+               </div>
+    </div>
+    </body>
+    </html>
+{% endblock %}

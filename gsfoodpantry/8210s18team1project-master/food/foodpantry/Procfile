@@ -1,0 +1,1 @@
+web: gunicorn foodpantry.wsgi --log-file -

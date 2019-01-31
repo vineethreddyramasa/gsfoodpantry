@@ -1,0 +1,95 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<style type="text/css">
+body {
+    font-family:Helvetica, sans-serif;
+    color:#222;
+    line-height:1.5;
+}
+table {
+    width:100%;
+    border-spacing:10px;
+    border-collapse: collapse;
+    margin:20px 20px;
+
+}
+table th, table td {
+    border : 2px;
+    text-align: center;
+    font-size:14px;
+    padding:10px;
+    margin: 20px;
+}
+tbody tr:nth-child(odd) {
+    background:#efefef;
+}
+thead th, tbody tr.total {
+    background:#5993bb;
+    color:#fff;
+    font-weight:bold;
+}
+h1 {
+    margin:0;
+}
+.secondary {
+    color:#bbb;
+    margin-bottom:20px;
+}
+.num {
+    text-align:right;
+}
+.paid, .pending {
+    color:#1bae37;
+    border:4px solid #1bae37;
+    text-transform:uppercase;
+    font-weight:bold;
+    font-size:22px;
+    padding:12px;
+    float:right;
+    transform: rotate(-15deg);
+    margin-right:40px;
+}
+.pending {
+    color:#a82d2d;
+    border:4px solid #a82d2d;
+}
+</style>
+
+</head>
+<body>
+
+        <h1>Invoice</h1>
+
+
+        <h3>Thank You for Donating to Good Shepherd Food Pantry</h3>
+
+        <p> We confirm that the below mentioned Donor has donated following items</p>
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>Item Number</th>
+        <th>Donor Name</th>
+        <th>Quantity</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+       {% for donation in donations %}
+        <tr>
+            <td align="center">{{ donation.item }}</td>
+            <td align="center">{{ donation.donor }}</td>
+            <td align="center">{{ donation.quantity }}</td>
+            <td align="center">{{ donation.received_date }}</td>
+        </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+    
+
+</body>
+</html>

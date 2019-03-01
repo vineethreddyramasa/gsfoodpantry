@@ -88,10 +88,10 @@ WSGI_APPLICATION = 'foodpantry.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dagbg8v41gs49d',
-        'USER': 'aeqvahhjzuhjrk',
-        'PASSWORD': '64809dc3166bbd9c8b2ed5bf08a0989d111b838aa681cb4d885031809e54b67e',
-        'HOST': 'ec2-174-129-206-173.compute-1.amazonaws.com',
+        'NAME': 'd589ifrcnlenm',
+        'USER': 'uegjfonsecemyh',
+        'PASSWORD': '5d8546e4236619949c6d7898b62611ab7e27f971a27b83bffff802d420b24a6c',
+        'HOST': 'ec2-107-20-185-27.compute-1.amazonaws.com',
         'PORT': '5432',
 
     }
